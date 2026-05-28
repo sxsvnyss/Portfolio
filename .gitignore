@@ -1,0 +1,70 @@
+```
+# Excel specific files
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.tsv
+
+# Backup files
+*.bak
+~$*
+
+# Temporary files
+*.tmp
+*.temp
+Thumbs.db
+.DS_Store
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# Logs
+*.log
+
+# Dependencies and build artifacts
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.venv/
+venv.bak/
+pip-log.txt
+pip-selfcheck.json
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution artifacts
+dist/
+build/
+*.egg-info/
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage/
+
+# Testing
+.pytest_cache/
+.mypy_cache/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+```
