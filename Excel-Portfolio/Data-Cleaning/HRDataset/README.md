@@ -379,8 +379,11 @@ It's actually:
 
 > Look at data → Understand it → Find weird shit → Research why → Fix it properly → Then analyze
 
-Sometimes the "fix" is realizing the data isn't actually broken, you just need and internet and surface.
+Sometimes the "fix" is realizing the data isn't actually broken, you just need an internet and surface.
 
 ---
 
 *Created this while learning Excel and Power Query. Dataset from Kaggle. Learned way more than expected.*
+
+*Source Dataset*
+[Kaggle](https://www.kaggle.com/datasets/rhuebner/human-resources-data-set)
