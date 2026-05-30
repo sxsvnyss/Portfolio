@@ -134,7 +134,10 @@ Yet somehow, it contained exactly the explanation I needed.
 
 According to Ken, 
 > many systems export dates using the US format (**MM/DD/YYYY**). When those dates are imported into a system configured with a different regional setting, Excel may interpret them incorrectly.
-[1](https://excelguru.ca/fix-date-errors/#)
+[1](https://excelguru.ca/fix-date-errors/#) 
+
+<img width="1070" height="134" alt="image (1)" src="https://github.com/user-attachments/assets/0afa8155-b896-487d-94e3-81bb0035bb7f" />
+
 
 In other words, the problem wasn't just the data.
 The problem was that Excel was trying to be helpful.
@@ -176,6 +179,9 @@ More moments of staring at Power Query wondering if I had accidentally enrolled 
 Eventually, I stumbled across another gem on Reddit: **"Turn 090523 text into 9/5/23 date in Power Query."**
 
 While reading through the discussion, one comment caught my attention. It was posted by a user named ***workonlyreddit***. [1](https://www.reddit.com/r/excel/comments/1d1e1fz/comment/l5tau7q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+
+<img width="751" height="293" alt="image" src="https://github.com/user-attachments/assets/f7df3f7f-a740-4901-828b-2b228d32bb80" />
+
 
 Another ancient post.
 
