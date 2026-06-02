@@ -1,3 +1,7 @@
+[← Back to Excel Projects](../README.md) | [Main Portfolio](../../README.md)
+
+---
+
 # HR Workforce Analysis — Excel & Power Query
 
 **Dataset:** Human Resources Data Set | **Source:** Kaggle  
@@ -8,11 +12,11 @@
 
 ## What This Is
 
-Okay so first time dealing with actual HR data. Like serious HR data. The dataset has employee information — demographics, salary, departments, managers, satisfaction, performance ratings, all that stuff.
+Okay so first time dealing with actual HR data. Like serious HR data. The dataset has employee information — demographics, salary, departments, managers, satisfaction, performance ratings, all that [...]
 
 Simple goal: clean the data, build some columns, make a dashboard.
 
-What actually happened? A lot of wtf moments, a lot of going to Reddit at 2am, learning how to actually think through problems instead of just copying formulas from Stack Overflow and AI bruh thats not Hardcore.
+What actually happened? A lot of wtf moments, a lot of going to Reddit at 2am, learning how to actually think through problems instead of just copying formulas from Stack Overflow and AI bruh thats no[...]
 
 This README is basically me documenting the whole mess. The confusing parts too. Not just the "here's the answer" parts.
 
@@ -38,7 +42,7 @@ First thing I noticed: `ManagerID` had bunch of same values repeating. My immedi
 
 Then I thought about it for like 5 seconds and realized... yeah, multiple people report to the same manager. That's how jobs work. Dumbass.
 
-Also saw `Webster Butler` as a manager name. Saw `N/A-StillEmployed` in some columns. Looked sus at first. Then I checked — that's just how the system marked active employees. Not an error, just how they did it.
+Also saw `Webster Butler` as a manager name. Saw `N/A-StillEmployed` in some columns. Looked sus at first. Then I checked — that's just how the system marked active employees. Not an error, just how[...]
 
 To actually check for full duplicates, I used **Conditional Formatting → Highlight Duplicate Cells**.
 
@@ -178,7 +182,7 @@ More moments of staring at Power Query wondering if I had accidentally enrolled 
 
 Eventually, I stumbled across another gem on Reddit: **"Turn 090523 text into 9/5/23 date in Power Query."**
 
-While reading through the discussion, one comment caught my attention. It was posted by a user named ***workonlyreddit***. [1](https://www.reddit.com/r/excel/comments/1d1e1fz/comment/l5tau7q/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+While reading through the discussion, one comment caught my attention. It was posted by a user named ***workonlyreddit***. [1](https://www.reddit.com/r/excel/comments/1d1e1fz/comment/l5tau7q/?utm_sour[...]
 
 <img width="751" height="293" alt="image" src="https://github.com/user-attachments/assets/f7df3f7f-a740-4901-828b-2b228d32bb80" />
 
@@ -293,7 +297,7 @@ Used `SWITCH()` and `INT()` to convert. Now I could actually calculate averages 
 
 ## Age — The Confusing Part
 
-Here's the thing: First time working with HR data. Didn't even know what DOB meant. Like I'm looking at this dataset going "what is this abbreviation?" So I researched what it meant before doing anything.
+Here's the thing: First time working with HR data. Didn't even know what DOB meant. Like I'm looking at this dataset going "what is this abbreviation?" So I researched what it meant before doing anyth[...]
 
 DOB = Date of Birth. Okay. Cool.
 
@@ -318,7 +322,7 @@ Whoa, whoa, whoa. that's too far.
 
 i love my goverment.
 
-The point is, I was convinced something had to be broken. My Office installation, my Excel version, my laptop, the alignment of the planets—anything except the possibility that I was simply looking at the problem the wrong way.
+The point is, I was convinced something had to be broken. My Office installation, my Excel version, my laptop, the alignment of the planets—anything except the possibility that I was simply looking [...]
 
 And i do More research and Found `INT()` + `YEARFRAC()` combo:
 
@@ -389,7 +393,11 @@ Sometimes the "fix" is realizing the data isn't actually broken, you just need a
 
 ---
 
-*Created this while learning Excel and Power Query. Dataset from Kaggle. Learned way more than expected.*
+*Created by Zainul Alim while learning Excel and Power Query. Dataset from Kaggle. Learned way more than expected.*
 
 *Source Dataset*
 [Kaggle](https://www.kaggle.com/datasets/rhuebner/human-resources-data-set)
+
+---
+
+[← Back to Excel Projects](../README.md) | [Main Portfolio](../../README.md)
