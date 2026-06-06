@@ -13,135 +13,45 @@
 ## Project Flow
 
 ```mermaid
-%%{ init: { 'theme': 'dark', 'themeVariables': { 'fontFamily': 'Arial, sans-serif', 'fontSize': '13px', 'background': 'transparent', 'mainBkg': 'transparent', 'canvasBackground': 'transparent', 'primaryColor': '#1e293b', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#0f172a', 'lineColor': '#64748b' }, 'flowchart': { 'useMaxWidth': true, 'padding': '40' } } %%
-
 flowchart TD
-    %% --- NODE STYLE DEFINITIONS ---
-    classDef inputNode fill:#f1f5f9,stroke:#cbd5e1,stroke-width:2px,color:#1e293b,font-family:Arial,font-size:13px;
-    classDef phaseHeader fill:#1e293b,stroke:#0f172a,stroke-width:2px,color:#ffffff,font-family:Arial,font-weight:bold,font-size:14px;
-    classDef processStep fill:#ffffff,stroke:#e2e8f0,stroke-width:1px,color:#334155,font-family:Arial,font-size:13px;
-    classDef checkNode fill:#fffbeb,stroke:#f59e0b,stroke-width:2px,color:#78350f,font-family:Arial,font-size:13px;
-    classDef formulaNode fill:#f0fdfa,stroke:#0d9488,stroke-width:2px,color:#115e59,font-family:Arial,font-size:13px;
-    classDef outputNode fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#166534,font-family:Arial,font-weight:bold,font-size:13px;
-
-    %% --- PHASE 1: DATA ASSESSMENT ---
-    A["Raw Data Input<br/>(311 Records)"]:::inputNode
-
-    subgraph P1 ["DATA ASSESSMENT"]
-        B["Phase 1:<br/>Data Assessment"]:::phaseHeader
-        B_spacer1["<br/>"]
-        B1{"Check for<br/>Issues?"}:::checkNode
-        B_spacer2["<br/>"]
-        B2["Duplicates Check"]:::processStep
-        B3["Missing Data Check"]:::processStep
-        B4["Format Issues Check"]:::processStep
-        B_spacer3["<br/>"]
-        B5["No Duplicates"]:::processStep
-        B6["Clean Data"]:::processStep
-        B7["Date & Salary Format"]:::checkNode
-    end
-
-    %% --- PHASE 2: DATA TRANSFORMATION ---
-    subgraph P2 ["DATA TRANSFORMATION ETL"]
-        C["Phase 2:<br/>Date Format Fix"]:::phaseHeader
-        C_spacer1["<br/>"]
-        C1["Import to<br/>Power Query"]:::processStep
-        C_spacer2["<br/>"]
-        C2["Split DOB by /"]:::processStep
-        C_spacer3["<br/>"]
-        C3["Rebuild Date Manually<br/>#date MM/DD/YY<br/>→ DD/MM/YYYY"]:::formulaNode
-        C_spacer4["<br/>"]
-        C4["Convert to<br/>IDN Locale"]:::processStep
-        C_spacer5["<br/>"]
-        C5["Consistent Dates"]:::outputNode
-    end
-
-    %% --- PHASE 3: FEATURE ENGINEERING ---
-    subgraph P3 ["FEATURE ENGINEERING"]
-        D["Phase 3:<br/>Derived Columns"]:::phaseHeader
-        D_spacer1["<br/>"]
-        D1["Salary Band<br/>(IFS Formula)"]:::formulaNode
-        D2["Satisfaction Level<br/>(IFS Formula)"]:::formulaNode
-        D3["Age Calculation<br/>(YEARFRAC)"]:::formulaNode
-        D_spacer2["<br/>"]
-        D4["Low / Medium / High"]:::outputNode
-        D5["Very Satisfied to<br/>Dissatisfied"]:::outputNode
-        D6["Age in Years"]:::outputNode
-    end
-
-    %% --- PHASE 4: BUSINESS INTELLIGENCE ---
-    subgraph P4 ["BUSINESS INTELLIGENCE"]
-        E["Phase 4:<br/>Dashboard"]:::phaseHeader
-        E_spacer1["<br/>"]
-        E1["Create Pivot Tables"]:::processStep
-        E_spacer2["<br/>"]
-        E2["Build Core Metrics"]:::processStep
-        E_spacer3["<br/>"]
-        E3["Dashboard<br/>Visualization"]:::processStep
-    end
-
-    F["Final Output:<br/>Complete Dashboard"]:::outputNode
-
-    %% --- PIPELINE CONNECTIONS ---
-    A --> B
-    B --> B_spacer1 --> B1
-    B1 --> B_spacer2 --> B2
-    B1 --> B3
-    B1 --> B4
+    A["📊 Raw Data Input<br/>(311 Records)"]
     
-    B2 --> B_spacer3 --> B5
-    B3 --> B6
-    B4 --> B7
+    B1["✓ Duplicates Check<br/>✓ Missing Data<br/>✓ Format Issues"]
+    B2["Result: Clean Data<br/>Ready for Transform"]
     
-    B5 --> C
-    B6 --> C
-    B7 --> C
+    C1["Import to Power Query<br/>Split DOB by /"]
+    C2["Rebuild Dates Manually<br/>#date MM/DD/YY<br/>→ DD/MM/YYYY"]
     
-    C --> C_spacer1 --> C1
-    C1 --> C_spacer2 --> C2
-    C2 --> C_spacer3 --> C3
-    C3 --> C_spacer4 --> C4
-    C4 --> C_spacer5 --> C5
+    D1["Salary Band<br/>IFS Formula"]
+    D2["Satisfaction Level<br/>IFS Formula"]
+    D3["Age Calculation<br/>YEARFRAC Formula"]
     
-    C5 --> D
-    D --> D_spacer1 --> D1
-    D --> D2
-    D --> D3
+    E1["Create Pivot Tables<br/>Build Core Metrics"]
+    E2["Dashboard<br/>Visualization"]
     
-    D1 --> D_spacer2 --> D4
-    D2 --> D5
-    D3 --> D6
+    F["✅ Complete Dashboard<br/>311 Employees Analyzed"]
     
-    D4 --> E
-    D5 --> E
-    D6 --> E
+    style A fill:#f1f5f9,stroke:#cbd5e1,stroke-width:2px,color:#1e293b
+    style B1 fill:#fffbeb,stroke:#f59e0b,stroke-width:2px,color:#78350f
+    style B2 fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#166534
+    style C1 fill:#ffffff,stroke:#e2e8f0,stroke-width:2px,color:#334155
+    style C2 fill:#f0fdfa,stroke:#0d9488,stroke-width:2px,color:#115e59
+    style D1 fill:#f0fdfa,stroke:#0d9488,stroke-width:2px,color:#115e59
+    style D2 fill:#f0fdfa,stroke:#0d9488,stroke-width:2px,color:#115e59
+    style D3 fill:#f0fdfa,stroke:#0d9488,stroke-width:2px,color:#115e59
+    style E1 fill:#ffffff,stroke:#e2e8f0,stroke-width:2px,color:#334155
+    style E2 fill:#ffffff,stroke:#e2e8f0,stroke-width:2px,color:#334155
+    style F fill:#f0fdf4,stroke:#16a34a,stroke-width:3px,color:#166534,font-weight:bold
     
-    E --> E_spacer1 --> E1
-    E1 --> E_spacer2 --> E2
-    E2 --> E_spacer3 --> E3
-    E3 --> F
-
-    %% --- HIDE SUBGRAPH BORDERS ---
-    style P1 fill:none,stroke:none;
-    style P2 fill:none,stroke:none;
-    style P3 fill:none,stroke:none;
-    style P4 fill:none,stroke:none;
-    
-    %% --- HIDE SPACER NODES ---
-    style B_spacer1 fill:none,stroke:none;
-    style B_spacer2 fill:none,stroke:none;
-    style B_spacer3 fill:none,stroke:none;
-    style C_spacer1 fill:none,stroke:none;
-    style C_spacer2 fill:none,stroke:none;
-    style C_spacer3 fill:none,stroke:none;
-    style C_spacer4 fill:none,stroke:none;
-    style C_spacer5 fill:none,stroke:none;
-    style D_spacer1 fill:none,stroke:none;
-    style D_spacer2 fill:none,stroke:none;
-    style E_spacer1 fill:none,stroke:none;
-    style E_spacer2 fill:none,stroke:none;
-    style E_spacer3 fill:none,stroke:none;
-
+    A --> B1 --> B2
+    B2 --> C1 --> C2
+    C2 --> D1
+    C2 --> D2
+    C2 --> D3
+    D1 --> E1
+    D2 --> E1
+    D3 --> E1
+    E1 --> E2 --> F
 ```
 
 ---
